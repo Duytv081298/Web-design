@@ -92,7 +92,7 @@
 
 <?php 
 $sql = "SELECT id, name FROM label";
-$db = parse_url(getenv("DATABASE_URL"));
+$db = parse_url(getenv("postgres://tpxgiylnxuuodr:3c1187366d0ec071c50a6b23f08463c7cf5c0e83b0d8304df3d6d76ac0bff16e@ec2-54-221-198-156.compute-1.amazonaws.com:5432/dcvm369d6sl8tr"));
 $pdo = new PDO("pgsql:" . sprintf(
     "host=%s;port=%s;user=%s;password=%s;dbname=%s",
     $db["host"],
