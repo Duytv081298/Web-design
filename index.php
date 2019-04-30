@@ -3,6 +3,7 @@
 <body>
 
 <h1>My first PHP page</h1>
+<h1><a href="http://localhost/123/Cunshop.php">Trang chủ</a></h1>
 
 <?php 
 $sql = "SELECT id, name FROM label";
