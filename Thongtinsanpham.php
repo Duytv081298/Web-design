@@ -10,16 +10,16 @@
 	<div class="header">
 			<div class="nava">
 			<ul>
-				<li><a href="http://localhost/123/Cunshop.php">Trang chủ</a></li>
+				<li><a href="https://designweb.herokuapp.com/Cunshop.php">Trang chủ</a></li>
 				<li><a href="">Kiểm tra đơn hàng</a></li>
 				<li><a href="">Đăng nhập</a></li>
-				<li><a href="http://localhost/123/Dangkykh.php">đăng ký</a></li>
-				<li><a href="http://localhost/123/admin.php">Admin</a></li>
+				<li><a href="https://designweb.herokuapp.com/Dangkykh.php">đăng ký</a></li>
+				<li><a href="https://designweb.herokuapp.com/admin.php">Admin</a></li>
 			</ul>
 			</div>
 		 	<div class="banner">
 		 		<div class="Home">
-					<a href="http://localhost/123/Cunshop.php">Cun Shop</a>
+					<a href="https://designweb.herokuapp.com/Cunshop.php">Cun Shop</a>
 				</div>
 				<div class="Search">
 					<div class="Search1">

@@ -10,13 +10,13 @@
 	<div class="header">
 		<div class="nava">
 			<ul>
-				<li><a href="http://localhost/123/Cunshop.php">Trở về giao diện khách hàng</a></li>
+				<li><a href="https://designweb.herokuapp.com/Cunshop.php">Trở về giao diện khách hàng</a></li>
 			</ul>
 		</div>
 		<div class="banner">
 		 		<div class="Home">
 		 			<p>Giao diện dành riêng cho admin</p>
-					<a href="http://localhost/123/Cunshop.php">Cun Shop</a>
+					<a href="https://designweb.herokuapp.com/Cunshop.php">Cun Shop</a>
 				</div>
 				<div class="Search">
 					<div class="Search1">
@@ -78,7 +78,7 @@
 	 					<tr></tr>
 	 					<tr>
 	 						<td > <input type="submit" value="Add" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:50%; height: 30px" ></td>
-	 						<th > <a href="http://localhost/123/admin.php"><input type="button" value="Trở lại" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:30%; height: 30px"></a></th>
+	 						<th > <a href="https://designweb.herokuapp.com/admin.php"><input type="button" value="Trở lại" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:30%; height: 30px"></a></th>
 	 					</tr>
 
 	 				</table>

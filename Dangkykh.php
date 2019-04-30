@@ -10,16 +10,16 @@
 	<div class="header">
 			<div class="nava">
 			<ul>
-				<li><a href="http://localhost/123/Cunshop.php">Trang chủ</a></li>
+				<li><a href="https://designweb.herokuapp.com/Cunshop.php">Trang chủ</a></li>
 				<li><a href="">Kiểm tra đơn hàng</a></li>
 				<li><a href="">Đăng nhập</a></li>
-				<li><a href="http://localhost/123/Dangkykh.php">đăng ký</a></li>
-				<li><a href="http://localhost/123/admin.php">Admin</a></li>
+				<li><a href="https://designweb.herokuapp.com/Dangkykh.php">đăng ký</a></li>
+				<li><a href="https://designweb.herokuapp.com/admin.php">Admin</a></li>
 			</ul>
 			</div>
 		 	<div class="banner">
 		 		<div class="Home">
-					<a href="http://localhost/123/Cunshop.php">Cun Shop</a>
+					<a href="https://designweb.herokuapp.com/Cunshop.php">Cun Shop</a>
 				</div>
 				<div class="Search">
 					<div class="Search1">
@@ -37,7 +37,7 @@
 				<table align="center" cellspacing="0" cellpadding="0" width="50%">
 					<tr>
 						<td><h1>Tạo tài khoản Cun Shop</h1></td>
-						<td style="padding-left: 200px">Bạn đã là thành viên?<a href="http://localhost/123/Dangnhap.php">Đăng Nhập</a> tại đây</td>
+						<td style="padding-left: 200px">Bạn đã là thành viên?<a href="https://designweb.herokuapp.com/Dangnhap.php">Đăng Nhập</a> tại đây</td>
 					</tr>
 				</table>
 			</div>

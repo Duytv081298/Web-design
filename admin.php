@@ -100,13 +100,13 @@
 	<div class="header">
 		<div class="nava">
 			<ul>
-				<li><a href="http://localhost/123/Cunshop.php">Trở về giao diện khách hàng</a></li>
+				<li><a href="https://designweb.herokuapp.com/Cunshop.php">Trở về giao diện khách hàng</a></li>
 			</ul>
 			</div>
 		<div class="banner">
 		 		<div class="Home">
 		 			<p>Giao diện dành riêng cho admin</p>
-					<a href="http://localhost/123/Cunshop.php">Cun Shop</a>
+					<a href="https://designweb.herokuapp.com/Cunshop.php">Cun Shop</a>
 				</div>
 				<div class="Search">
 					<div class="Search1">
@@ -150,7 +150,7 @@
 							
 						<?php } ?>
 
-							<th ><a href="http://localhost/123/Suadoi.php?id=<?php echo $rows[$i][0] ?>"><input type="button" value="Update" style=" background-color: #FF7302; text-decoration-color: #FFFFFF;" ></a> 
+							<th ><a href="https://designweb.herokuapp.com/Suadoi.php?id=<?php echo $rows[$i][0] ?>"><input type="button" value="Update" style=" background-color: #FF7302; text-decoration-color: #FFFFFF;" ></a> 
 							</th>
 							<th ><a href="admin.php?del=<?php echo $rows[$i][0] ?>"> <input type="button" value="Delete" style=" background-color: #FF7302; text-decoration-color: #FFFFFF;" onclick="return Deleteqry(<?php echo $rows[$i][0] ?>);"> </a>
 							</th>
@@ -158,7 +158,7 @@
 				<?php } ?>
 			</table> <br> <br>
 			<div>
-				<b><span style="font-size:20px">Thêm Sản phẩm mới:</span></b>   <a href="http://localhost/123/add.php"><input type="button" value="Thêm Sản Phẩm" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:25%; height: 30px" ></a> 
+				<b><span style="font-size:20px">Thêm Sản phẩm mới:</span></b>   <a href="https://designweb.herokuapp.com/add.php"><input type="button" value="Thêm Sản Phẩm" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:25%; height: 30px" ></a> 
 			</div>
 			
 		</div>
@@ -224,7 +224,7 @@
 								<?php echo $rows[$i][$j]?>
 							</th>
 						<?php } ?>
-							<th ><a href="http://localhost/123/Suadoi.php?id=<?php echo $rows[$i][0] ?>"><input type="button" value="Update" style=" background-color: #FF7302; text-decoration-color: #FFFFFF;" ></a> 
+							<th ><a href="https://designweb.herokuapp.com/Suadoi.php?id=<?php echo $rows[$i][0] ?>"><input type="button" value="Update" style=" background-color: #FF7302; text-decoration-color: #FFFFFF;" ></a> 
 							</th>
 							<th ><a href="admin.php?del=<?php echo $rows[$i][0] ?>"> <input type="button" value="Delete" style=" background-color: #FF7302; text-decoration-color: #FFFFFF;" onclick="return Deleteqry(<?php echo $rows[$i][0] ?>);"> </a>
 							</th>
@@ -232,7 +232,7 @@
 				<?php } ?>
 			</table>
 			<div> <br> <br>
-				<b><span style="font-size:20px">Thêm Loại sản phẩm mới:</span></b>   <a href="http://localhost/123/addcategory.php"><input type="button" value="Thêm Catedory" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:25%; height: 30px" ></a> 
+				<b><span style="font-size:20px">Thêm Loại sản phẩm mới:</span></b>   <a href="https://designweb.herokuapp.com/addcategory.php"><input type="button" value="Thêm Catedory" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:25%; height: 30px" ></a> 
 			</div>
 			</form>
 		</div>
