@@ -52,20 +52,46 @@
 		<div >
 			<div class="Mathang">Mặt Hàng Nổi Bật: </div>
 			<br>
-<?php 
-			require_once('./Cunshopconnector.php');
-			$conn = new Cunshopconnector();
-			$sql = "Select * From product";
-			$rows = $conn->runQuery($sql);
-			for ($i=0; $i < count($rows) ; $i++) { 
-				?>
+
+
+
+<?php
+
+     include 'ConnectorSQL';
+
+    $queryfirst = "SELECT
+
+   product.productid as 'productid',
+   product.productname as 'productname',
+   product.unitprice as 'unitprice',
+   product.images as 'images',
+   product.stock as 'stock',
+   product.manufacturer as 'manufacturer',
+   product.categoryid as 'categoryid',
+   category.categoryid
+
+    FROM product, category";
+    $resultfirst = pg_query($connection,$queryfirst);
+    if (pg_num_rows($resultfirst) > 0) {
+      // output data of each row
+      while($rowfirst = pg_fetch_assoc($resultfirst)) {
+
+            $productid_best = $rowfirst['productid'];
+            $productname_best = $rowfirst['productname'];
+            $unitprice_best = $rowfirst['unitprice'];
+            $images_best = $rowfirst['images'];
+            $manufacturer_best = $rowfirst['manufacturer'];
+            $stocksold = $rowfirst['stock'];
+
+            ?>
+
 				<div class="item">
-					<a href="Thongtinsanpham.php?prid=<?=$rows[$i]['Productid']?>"><div class="iimage"><img src="<?=$rows[$i]['Images']?>" alt="">
+					<a href="Thongtinsanpham.php?productid=<?= $productid_best;  ?>"><div class="iimage"><img src="products/<?= $images_best; ?>" alt="">
 					</div></a>
-					<div class="Thongtin">	Tên Sản Phẩm: <?=$rows[$i]['Productname']?> <br> <br>
-											Nhà sản Xuất: <?=$rows[$i]['Manufacturer']?> <br> <br>
-											Giá Sản Phẩm: <?=$rows[$i]['Unitprice']?>vnđ <br> <br>
-											Số lượng sản phẩm:<?=$rows[$i]['Stock']?>
+					<div class="Thongtin">	Tên Sản Phẩm: <?= $productname_best; ?> <br> <br>
+											Nhà sản Xuất: <?= $manufacturer_best; ?>  <br> <br>
+											Giá Sản Phẩm: <?=$unitprice_best; ?>vnđ <br> <br>
+											Số lượng sản phẩm:<?= $stocksold; ?>
 					</div>
 				</div>
 				<?php
