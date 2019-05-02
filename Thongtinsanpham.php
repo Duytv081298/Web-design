@@ -52,24 +52,33 @@
 				?>
 			</ul>	
 		</div>
+
 		<div class="sanphamchitiet">
-			<?php
-			if (isset($_GET['prid'])) {
-				require_once('./Cunshopconnector.php');
-			$conn = new Cunshopconnector();
-			$sql = "Select * From product WHERE Productid =".$_GET['prid'];
-			$rows = $conn->runQuery($sql);
-			for ($i=0; $i < count($rows) ; $i++) { 
-				?>
+
+		<?php
+		include 'db.php';
+
+        $queryproduct = "SELECT productid, productname, unitprice, images, stock, manufacturer FROM product WHERE productid = '{$productid}'";
+        $result = pg_query($connection,$queryproduct);
+
+            if (pg_num_rows($result) > 0) {
+            while($rowproduct = pg_fetch_assoc($result)) {
+              $productid = $rowproduct['productid'];
+              $productname = $rowproduct['productname'];
+              $unitprice = $rowproduct['unitprice'];
+              $images = $rowproduct['images'];
+              $stock = $rowproduct['stock'];
+              $manufacturer = $rowproduct['manufacturer'];
+        ?>
 				<form action="">
 				<div class="Chitietsanpham1">
-					<div class="anh"><img src="<?=$rows[$i]['Images']?>" alt="">
+					<div class="anh"><img src="img/<?= $images; ?>" alt="">
 					</div>
-					<div class="chitiet">	<br>Tên Sản Phẩm: <?=$rows[$i]['Productname']?> <br> <br>
-											Nhà sản Xuất: <?=$rows[$i]['Manufacturer']?> <br> <br>
+					<div class="chitiet">	<br>Tên Sản Phẩm: <?= $productname; ?> <br> <br>
+											Nhà sản Xuất: <?= $manufacturer; ?> <br> <br>
 											<hr> <br>
-											Giá Sản Phẩm: <?=$rows[$i]['Unitprice']?>vnđ <br> <br>
-											Số lượng sản phẩm:<?=$rows[$i]['Stock']?> <br> <br>
+											Giá Sản Phẩm: <?= $unitprice; ?>vnđ <br> <br>
+											Số lượng sản phẩm:<?= $stock; ?> <br> <br>
 											Số lượng sản phẩm bạn muốn mua: <input type="number" style="width: 100px;"> <br> <br> <br>
 											<a href=""><input type="button" value="Mua Ngay" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:40%; height: 30px; margin: 20px" ></a>
 											<a href=""><input type="button" value="Thêm vào giỏ hàng" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:40%; height: 30px; margin: 15px" ></a>
