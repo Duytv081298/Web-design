@@ -54,7 +54,7 @@
 					$fax = $_POST['fax'];
 					$tendangnhap = $_POST['tendangnhap'];
 					$password = $_POST['password'];
-					$sql = "INSERT INTO customers(custid, fullname,  address, postalcode, city, country, phone, fax, tendangnhap, password)  VALUES (". (int)$custid .",'". $fullname ."',". $address .", '". $postalcode."',   ". $city .", ". $country .",    ". $phone .",   ". $fax .", ". $tendangnhap .",". (int)$password .")";
+					$sql = "INSERT INTO customers(custid, fullname,  address, postalcode, city, country, phone, fax, tendangnhap, password)  VALUES ('$custid','$fullname','$address', '$postalcode',   '$city', '$country', '$phone', '$fax', '$tendangnhap','$password')";
 					$sql1 ="SELECT * FROM customers WHERE custid =".$_POST['custid'];
 					include 'ConnectorSQL.php';
 					$row = pg_query($connection, $sql);	
