@@ -42,9 +42,6 @@
 				</table>
 			</div>
 			<?php 
-				require_once('./Cunshopconnector.php');
-				if(isset($_POST['custid']))
-				{
 					//Lấy dữ liệu gửi lên
 					$Custid = $_POST['custid'];
 					// insert dữ liệu
@@ -64,10 +61,9 @@
 					$message = "Đã Thêm thông tin khách hàng";
 					echo "<script type='text/javascript'>alert('$message');</script>";
 					
-				}
 			 ?>
 			<div  class="dangky2" >
-				<form action="admin.php" method="POST">
+				<form action="" method="POST">
 					
 	 				<table  cellspacing="40" cellpadding="0" >
 	 					<tr>
