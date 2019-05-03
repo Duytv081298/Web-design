@@ -59,17 +59,11 @@
 					$Password = $_POST['Password'];
 					$sql = "INSERT INTO customers(Custid, Fullname,  Address, Postalcode, City, Country, Phone, Fax, Tendangnhap, Password)  VALUES (". (int)$Custid .",'". $Fullname ."',". $Address .", '". $Postalcode."',   ". $City .", ". $Country .",    ". $Phone .",   ". $Fax .", ". $Tendangnhap .",". (int)$Password .")";
 					$sql1 ="SELECT * FROM customers WHERE Custid =".$_POST['Custid'];
-					$conn = new Cunshopconnector();
-					$row = $conn -> runQuery($sql1);
-					if (count($row)>0) {
-						$mess = "Error, ID existed";
-						echo "<script type='text/javascript'>alert('$mess'); window.history.back();</script>";
-						} 
-					else {
-						$conn -> execStatement($sql);
-						$message = "Đã Thêm thông tin khách hàng";
-						echo "<script type='text/javascript'>alert('$message');</script>";
-						}
+					include './ConnectorSQL.php';
+					$row = pg_query($connection, $sql);	
+					$message = "Đã Thêm thông tin khách hàng";
+					echo "<script type='text/javascript'>alert('$message');</script>";
+					
 				}
 			 ?>
 			<div  class="dangky2" >
