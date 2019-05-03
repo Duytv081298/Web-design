@@ -61,7 +61,7 @@
 
        $start = ($page > 1) ? ($page * $perpage) - $perpage : 0;
 
-       $queryproduct = "SELECT productid, productname, unitprice, images, stock, manufacturer FROM product WHERE name LIKE '%{$word}%' ORDER BY id DESC LIMIT 5";
+       $queryproduct = "SELECT productid, productname, unitprice, images, stock, manufacturer FROM product WHERE productname LIKE '%{$word}%' ORDER BY productid DESC LIMIT 5";
        $result = pg_query($connection,$queryproduct);
 
        //pages
