@@ -43,22 +43,22 @@
 			</div>
 			<?php 
 				require_once('./Cunshopconnector.php');
-				if(isset($_POST['Custid']))
+				if(isset($_POST['custid']))
 				{
 					//Lấy dữ liệu gửi lên
-					$Custid = $_POST['Custid'];
+					$Custid = $_POST['custid'];
 					// insert dữ liệu
-					$Fullname = $_POST['Fullname'];	
-					$Address = $_POST['Address'];
-					$Postalcode = $_POST['Postalcode'];
-					$City = $_POST['City'];
-					$Country = $_POST['Country'];
-					$Phone = $_POST['Phone'];
-					$Fax = $_POST['Fax'];
-					$Tendangnhap = $_POST['Tendangnhap'];
-					$Password = $_POST['Password'];
-					$sql = "INSERT INTO customers(Custid, Fullname,  Address, Postalcode, City, Country, Phone, Fax, Tendangnhap, Password)  VALUES (". (int)$Custid .",'". $Fullname ."',". $Address .", '". $Postalcode."',   ". $City .", ". $Country .",    ". $Phone .",   ". $Fax .", ". $Tendangnhap .",". (int)$Password .")";
-					$sql1 ="SELECT * FROM customers WHERE Custid =".$_POST['Custid'];
+					$Fullname = $_POST['fullname'];	
+					$Address = $_POST['address'];
+					$Postalcode = $_POST['postalcode'];
+					$City = $_POST['city'];
+					$Country = $_POST['country'];
+					$Phone = $_POST['phone'];
+					$Fax = $_POST['fax'];
+					$Tendangnhap = $_POST['tendangnhap'];
+					$Password = $_POST['password'];
+					$sql = "INSERT INTO customers(custid, fullname,  address, postalcode, city, country, phone, fax, tendangnhap, password)  VALUES (". (int)$custid .",'". $fullname ."',". $address .", '". $postalcode."',   ". $city .", ". $country .",    ". $phone .",   ". $fax .", ". $tendangnhap .",". (int)$password .")";
+					$sql1 ="SELECT * FROM customers WHERE custid =".$_POST['custid'];
 					include 'ConnectorSQL.php';
 					$row = pg_query($connection, $sql);	
 					$message = "Đã Thêm thông tin khách hàng";
@@ -72,40 +72,40 @@
 	 				<table  cellspacing="40" cellpadding="0" >
 	 					<tr>
 	 						<td>ID khách hàng <SPAN style="color: red">*</SPAN></td>
-	 						<th colspan=""><input type="text" name="Custid"required></th>
+	 						<th colspan=""><input type="text" name="custid"required></th>
 	 						<th></th>
 	 						<td>Tên đăng nhập <SPAN style="color: red">*</SPAN></td> 
-	 						<th><input type="text" name="Tendangnhap"required></th>
+	 						<th><input type="text" name="tendangnhap"required></th>
 
 	 					</tr>
 	 					<tr>
 	 						<td>Họ Tên <SPAN style="color: red">*</SPAN></td>
-	 						<th><input type="text" name="Fullname"required></th>
+	 						<th><input type="text" name="fullname"required></th>
 	 						<th></th>
 	 						<td>Mật khẩu <SPAN style="color: red">*</SPAN></td>
-	 						<th><input type="text" name="Password"required></th>
+	 						<th><input type="text" name="password"required></th>
 	 					</tr>
 
 	 					<tr>
 	 						<td>Địa Chỉ <SPAN style="color: red">*</SPAN></td>
-	 						<th><input type="text" name="Address"required></th>
+	 						<th><input type="text" name="address"required></th>
 	 						<th></th>
 	 						<td>Quốc gia <SPAN style="color: red">*</SPAN></td>
-	 						<th><input type="text" name="Country"required></th>
+	 						<th><input type="text" name="country"required></th>
 	 					</tr>
 	 					<tr>
 	 						<td>Thành Phố <SPAN style="color: red">*</SPAN></td>
-	 						<th><input type="text" name="City"required></th>
+	 						<th><input type="text" name="city"required></th>
 	 						<th></th>
 	 						<td>Fax</td>
-	 						<th><input type="text" name="Fax"></th>
+	 						<th><input type="text" name="fax"></th>
 	 					</tr>
 	 					<tr>
 	 						<td>Số điện thoại <SPAN style="color: red">*</SPAN></td>
-	 						<th><input type="text" name="Phone"required></th>
+	 						<th><input type="text" name="phone"required></th>
 	 						<th></th>
 	 						<td>Mã Bưu Điện </td>
-	 						<th><input type="text" name="Postalcode"></th>
+	 						<th><input type="text" name="postalcode"></th>
 	 					</tr>
 	 					<tr><td colspan="5" > Vui lòng điền tất cả các thông tin sản phẩm chứa dấu (<SPAN style="color: red">*</SPAN>)</td></tr>
 	 					<tr>
