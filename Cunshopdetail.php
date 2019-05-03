@@ -72,8 +72,8 @@
 		<?php
 
 		     include 'ConnectorSQL.php';
-
-		    $queryfirst = "SELECT * FROM product";
+		     $categoryid = $_GET['categoryid'];
+		    $queryfirst = "SELECT * FROM product where categoryid = $categoryid ";
 		    $resultfirst = pg_query($connection,$queryfirst);
 		    if (pg_num_rows($resultfirst) > 0) {
 		      // output data of each row
