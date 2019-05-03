@@ -43,17 +43,17 @@
 			</div>
 			<?php 
 					//Lấy dữ liệu gửi lên
-					$Custid = $_POST['custid'];
+					$custid = $_POST['custid'];
 					// insert dữ liệu
-					$Fullname = $_POST['fullname'];	
-					$Address = $_POST['address'];
-					$Postalcode = $_POST['postalcode'];
-					$City = $_POST['city'];
-					$Country = $_POST['country'];
-					$Phone = $_POST['phone'];
-					$Fax = $_POST['fax'];
-					$Tendangnhap = $_POST['tendangnhap'];
-					$Password = $_POST['password'];
+					$fullname = $_POST['fullname'];	
+					$address = $_POST['address'];
+					$postalcode = $_POST['postalcode'];
+					$city = $_POST['city'];
+					$country = $_POST['country'];
+					$phone = $_POST['phone'];
+					$fax = $_POST['fax'];
+					$tendangnhap = $_POST['tendangnhap'];
+					$password = $_POST['password'];
 					$sql = "INSERT INTO customers(custid, fullname,  address, postalcode, city, country, phone, fax, tendangnhap, password)  VALUES (". (int)$custid .",'". $fullname ."',". $address .", '". $postalcode."',   ". $city .", ". $country .",    ". $phone .",   ". $fax .", ". $tendangnhap .",". (int)$password .")";
 					$sql1 ="SELECT * FROM customers WHERE custid =".$_POST['custid'];
 					include 'ConnectorSQL.php';
