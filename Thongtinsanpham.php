@@ -71,7 +71,7 @@
         ?>
 				<form action="">
 				<div class="Chitietsanpham1">
-					<div class="anh"><img src="img/<?= $images; ?>" alt="">
+					<div class="anh"><img src="<?= $images; ?>" alt="">
 					</div>
 					<div class="chitiet">	<br>Tên Sản Phẩm: <?= $productname; ?> <br> <br>
 											Nhà sản Xuất: <?= $manufacturer; ?> <br> <br>

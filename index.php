@@ -86,7 +86,7 @@
 		            ?>
 
 				<div class="item">
-					<a href="Thongtinsanpham.php?productid=<?= $productid_best;  ?>"><div class="iimage"><img src="img/<?= $images_best; ?>" alt="">
+					<a href="Thongtinsanpham.php?productid=<?= $productid_best;  ?>"><div class="iimage"><img src="<?= $images_best; ?>" alt="">
 					</div></a>
 					<div class="Thongtin">	Tên Sản Phẩm: <?= $productname_best; ?> <br> <br>
 											Nhà sản Xuất: <?= $manufacturer_best; ?>  <br> <br>
