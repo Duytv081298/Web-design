@@ -54,16 +54,14 @@
 
 			<?php
 
-       include 'db.php';
-       //get products
+       include 'ConnectorSQL.php';
 
-       //pages links
        $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
        $perpage = isset($_GET['per-page']) && $_GET['per-page'] <= 16 ? (int)$_GET['per-page'] : 16;
 
        $start = ($page > 1) ? ($page * $perpage) - $perpage : 0;
 
-       $queryproduct = "SELECT id, name, price, id_picture, thumbnail FROM product WHERE name LIKE '%{$word}%' ORDER BY id DESC LIMIT 5";
+       $queryproduct = "SELECT productid, productname, unitprice, images, stock, manufacturer FROM product WHERE name LIKE '%{$word}%' ORDER BY id DESC LIMIT 5";
        $result = pg_query($connection,$queryproduct);
 
        //pages
@@ -73,38 +71,22 @@
          if (pg_num_rows($result) > 0) {
          // output data of each row
          while($rowproduct = pg_fetch_assoc($result)) {
-           $id_product = $rowproduct['id'];
-           $name_product = $rowproduct['name'];
-           $price_product = $rowproduct['price'];
-           $id_pic = $rowproduct['id_picture'];
-           $thumbnail_product = $rowproduct['thumbnail'];
+           $productid = $rowproduct['productid'];
+           $productname = $rowproduct['productname'];
+           $unitprice = $rowproduct['unitprice'];
+           $images = $rowproduct['images'];
+           $stock = $rowproduct['stock'];
+           $manufacturer = $rowproduct['manufacturer'];
 
          ?>
 
-
-
-
-
-
-
-
-
-			
-<?php 
-			require_once('./Cunshopconnector.php');
-			$conn = new Cunshopconnector();
-			$sql = "Select * From product where Productname like '%".$_GET['search']."%'";
-			$rows = $conn->runQuery($sql);
-			for ($i=0; $i < count($rows) ; $i++) { 
-				?>
-				
 				<div class="item">
-					<a href="Thongtinsanpham.php?prid=<?=$rows[$i]['Productid']?>"><div class="iimage"><img src="<?=$rows[$i]['Images']?>" alt="">
+					<a href="Thongtinsanpham.php?productid=<?= $productid_best;  ?>"><div class="iimage"><img src="img/<?= $images_best; ?>" alt="">
 					</div></a>
-					<div class="Thongtin">	Tên Sản Phẩm: <?=$rows[$i]['Productname']?> <br> <br>
-											Nhà sản Xuất: <?=$rows[$i]['Manufacturer']?> <br> <br>
-											Giá Sản Phẩm: <?=$rows[$i]['Unitprice']?>vnđ <br> <br>
-											Số lượng sản phẩm:<?=$rows[$i]['Stock']?>
+					<div class="Thongtin">	Tên Sản Phẩm: <?= $productname_best; ?> <br> <br>
+											Nhà sản Xuất: <?= $manufacturer_best; ?>  <br> <br>
+											Giá Sản Phẩm: <?=$unitprice_best; ?>vnđ <br> <br>
+											Số lượng sản phẩm:<?= $stocksold; ?>
 					</div>
 				</div>
 				<?php
