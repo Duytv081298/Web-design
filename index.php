@@ -34,18 +34,19 @@
 	<div class="main">
 		<div class="navb">
 			<ul>
-				<?php 
- 					require_once('./Cunshopconnector.php');
-					$conn = new Cunshopconnector();
-					$sql = "Select * from category";
-					$rows = $conn -> runQuery($sql);
-					foreach($rows as $r)
-					{
-				?> 
-					<li><a href="Cunshopdetail.php?Categoryid=<?=$r['Categoryid']?>"><?=$r['Categoryname']?></a></li>
-				<?php 
-					}
-				?>
+				<?php
+
+		          include 'db.php';
+		            $querycategory = "SELECT categoryid, categoryname FROM category";
+		            $total = pg_query($connection,$querycategory);
+		            if (pg_num_rows($total) > 0) {
+		            // output data of each row
+		            while($rowcategory = pg_fetch_assoc($total)) {
+		              $id_categorydb = $rowcategory['categoryid'];
+		              $name_category = $rowcategory['categoryname'];
+		          ?>
+		         <li><a href="Cunshopdetail.php?categoryid=<?= $categoryid; ?>"><?= $name_category; ?></a></li>
+		       <?php }} ?>
 			</ul>
 		</div>
 		
