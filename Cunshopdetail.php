@@ -35,8 +35,7 @@
 		<div class="navb">
 			<ul>
 				<?php
-
-		          include 'db.php';
+		          include 'ConnectorSQL.php';
 		            $querycategory = "SELECT categoryid, categoryname FROM category";
 		            $total = pg_query($connection,$querycategory);
 		            if (pg_num_rows($total) > 0) {
@@ -49,47 +48,57 @@
 		       <?php }} ?>
 			</ul>
 		</div>
-<br>
-		<div>
-			<?php 
- 					require_once('./Cunshopconnector.php');
-					$conn = new Cunshopconnector();
-					$sql = "Select * from category where Categoryid=".$_GET['Categoryid'];
-					$rows = $conn -> runQuery($sql);
-					foreach($rows as $r)
-					{
-				?> 
-					<b style="font-size: 30px;"><a style="text-decoration: none; color: black;"  href="Cunshopdetail.php?Categoryid=<?=$r['Categoryid']?>"><?=$r['Categoryname']?></a></b>
-
-				<?php 
-					}
-				?>
-		</div>
-		<br>
+		
 		<div >
-<?php 
-			require_once('./Cunshopconnector.php');
-			$CatID = $_GET['Categoryid'];
-			$sql = "Select * from product where Categoryid=" . $CatID;
-			$conn = new Cunshopconnector();
-			$rows = $conn->runQuery($sql);
-			for ($i=0; $i < count($rows) ; $i++) { 
-				?>
+			<div class="Mathang">Mặt Hàng Nổi Bật: </div>
+			<br>
+
+
+
+		<?php
+
+		     include 'ConnectorSQL.php';
+
+		    $queryfirst = "SELECT
+
+		   product.productid as 'productid',
+		   product.productname as 'productname',
+		   product.unitprice as 'unitprice',
+		   product.images as 'images',
+		   product.stock as 'stock',
+		   product.manufacturer as 'manufacturer',
+		   product.categoryid as 'categoryid',
+		   category.categoryid
+
+		    FROM product, category";
+		    $resultfirst = pg_query($connection,$queryfirst);
+		    if (pg_num_rows($resultfirst) > 0) {
+		      // output data of each row
+		      while($rowfirst = pg_fetch_assoc($resultfirst)) {
+
+		            $productid_best = $rowfirst['productid'];
+		            $productname_best = $rowfirst['productname'];
+		            $unitprice_best = $rowfirst['unitprice'];
+		            $images_best = $rowfirst['images'];
+		            $manufacturer_best = $rowfirst['manufacturer'];
+		            $stocksold = $rowfirst['stock'];
+
+		            ?>
+
 				<div class="item">
-					<a href="Thongtinsanpham.php?prid=<?=$rows[$i]['Productid']?>"><div class="iimage"><img src="<?=$rows[$i]['Images']?>" alt=""></a>
-					</div>
-					<div class="Thongtin">	Tên Sản Phẩm: <?=$rows[$i]['Productname']?> <br> <br>
-											Nhà sản Xuất: <?=$rows[$i]['Manufacturer']?> <br> <br>
-											Giá Sản Phẩm: <?=$rows[$i]['Unitprice']?>vnđ <br> <br>
-											Số lượng sản phẩm:<?=$rows[$i]['Stock']?>
+					<a href="Thongtinsanpham.php?productid=<?= $productid_best;  ?>"><div class="iimage"><img src="img/<?= $images_best; ?>" alt="">
+					</div></a>
+					<div class="Thongtin">	Tên Sản Phẩm: <?= $productname_best; ?> <br> <br>
+											Nhà sản Xuất: <?= $manufacturer_best; ?>  <br> <br>
+											Giá Sản Phẩm: <?=$unitprice_best; ?>vnđ <br> <br>
+											Số lượng sản phẩm:<?= $stocksold; ?>
 					</div>
 				</div>
 				<?php
-			}
+			}}
 			?>
 		</div>
-
-	</div>	
+	</div>
 	<div class="footer">
 		<table  cellspacing="0" cellpadding="10" width= 100% align="center" >
 			<tr >
