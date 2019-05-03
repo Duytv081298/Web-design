@@ -57,7 +57,7 @@
 
 		<?php
 		include 'db.php';
-
+		$productid =$_GET['productid'];
         $queryproduct = "SELECT productid, productname, unitprice, images, stock, manufacturer FROM product WHERE productid = '{$productid}'";
         $result = pg_query($connection,$queryproduct);
 
