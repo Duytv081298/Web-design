@@ -59,7 +59,7 @@
 		              $categoryid = $rowcategory['categoryid'];
 		              $categoryname = $rowcategory['categoryname'];
 		          ?>
-					<b style="font-size: 30px;"><a style="text-decoration: none; color: black;"  href="Cunshopdetail.php?categoryid=<?= $categoryid; ?>"><?=$r['categoryname']?></a></b>
+					<b style="font-size: 30px;"><a style="text-decoration: none; color: black;"  href="Cunshopdetail.php?categoryid= <?= $categoryid; ?> "><?= $categoryname; ?></a></b>
 
 				<?php 
 					}}
