@@ -81,12 +81,12 @@
          ?>
 
 				<div class="item">
-					<a href="Thongtinsanpham.php?productid=<?= $productid_best;  ?>"><div class="iimage"><img src="img/<?= $images_best; ?>" alt="">
+					<a href="Thongtinsanpham.php?productid=<?= $productid_best;  ?>"><div class="iimage"><img src="<?= $images; ?>" alt="">
 					</div></a>
-					<div class="Thongtin">	Tên Sản Phẩm: <?= $productname_best; ?> <br> <br>
-											Nhà sản Xuất: <?= $manufacturer_best; ?>  <br> <br>
-											Giá Sản Phẩm: <?=$unitprice_best; ?>vnđ <br> <br>
-											Số lượng sản phẩm:<?= $stocksold; ?>
+					<div class="Thongtin">	Tên Sản Phẩm: <?= $productname; ?> <br> <br>
+											Nhà sản Xuất: <?= $manufacturer; ?>  <br> <br>
+											Giá Sản Phẩm: <?=$unitprice; ?>vnđ <br> <br>
+											Số lượng sản phẩm:<?= $stock; ?>
 					</div>
 				</div>
 				<?php
