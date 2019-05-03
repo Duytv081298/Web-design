@@ -48,13 +48,27 @@
 		       <?php }} ?>
 			</ul>
 		</div>
-		
+		<div>
+			<?php
+		          include 'ConnectorSQL.php';
+		            $querycategory = "SELECT * FROM category WHERE categoryid = $_GET['categoryid'] ORDER BY productid DESC LIMIT 5";
+		            $total = pg_query($connection,$querycategory);
+		            if (pg_num_rows($total) > 0) {
+		            // output data of each row
+		            while($rowcategory = pg_fetch_assoc($total)) {
+		              $id_categorydb = $rowcategory['categoryid'];
+		              $name_category = $rowcategory['categoryname'];
+		          ?>
+					<b style="font-size: 30px;"><a style="text-decoration: none; color: black;"  href="Cunshopdetail.php?categoryid=<?=$r['categoryid']?>"><?=$r['categoryname']?></a></b>
+
+				<?php 
+					}}
+				?>
+		</div>
+
+
 		<div >
-			<div class="Mathang">Mặt Hàng Nổi Bật: </div>
 			<br>
-
-
-
 		<?php
 
 		     include 'ConnectorSQL.php';
