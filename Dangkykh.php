@@ -57,9 +57,12 @@
 					$sql = "INSERT INTO customers(custid, fullname,  address, postalcode, city, country, phone, fax, tendangnhap, password)  VALUES ('$custid','$fullname','$address', '$postalcode',   '$city', '$country', '$phone', '$fax', '$tendangnhap','$password')";
 					$sql1 ="SELECT * FROM customers WHERE custid =".$_POST['custid'];
 					include 'ConnectorSQL.php';
-					$row = pg_query($connection, $sql);	
-					$message = "Đã Thêm thông tin khách hàng";
+					$row = pg_query($connection, $sql);
+					if ($row) {
+						$message = "Đã Thêm thông tin khách hàng";
 					echo "<script type='text/javascript'>alert('$message');</script>";
+					}
+					
 					
 			 ?>
 			<div  class="dangky2" >
