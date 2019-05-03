@@ -73,39 +73,27 @@
 
 		     include 'ConnectorSQL.php';
 
-		    $queryfirst = "SELECT
-
-		   product.productid as 'productid',
-		   product.productname as 'productname',
-		   product.unitprice as 'unitprice',
-		   product.images as 'images',
-		   product.stock as 'stock',
-		   product.manufacturer as 'manufacturer',
-		   product.categoryid as 'categoryid',
-		   category.categoryid
-
-		    FROM product, category";
+		    $queryfirst = "SELECT * FROM product";
 		    $resultfirst = pg_query($connection,$queryfirst);
 		    if (pg_num_rows($resultfirst) > 0) {
 		      // output data of each row
 		      while($rowfirst = pg_fetch_assoc($resultfirst)) {
 
-		            $productid_best = $rowfirst['productid'];
-		            $productname_best = $rowfirst['productname'];
-		            $unitprice_best = $rowfirst['unitprice'];
-		            $images_best = $rowfirst['images'];
-		            $manufacturer_best = $rowfirst['manufacturer'];
-		            $stocksold = $rowfirst['stock'];
-
+		            $productid = $rowfirst['productid'];
+		            $productname = $rowfirst['productname'];
+		            $unitprice = $rowfirst['unitprice'];
+		            $images = $rowfirst['images'];
+		            $manufacturer = $rowfirst['manufacturer'];
+		            $stock = $rowfirst['stock'];
 		            ?>
 
 				<div class="item">
-					<a href="Thongtinsanpham.php?productid=<?= $productid_best;  ?>"><div class="iimage"><img src="<?= $images_best; ?>" alt="">
+					<a href="Thongtinsanpham.php?productid=<?= $productid;  ?>"><div class="iimage"><img src="<?= $images; ?>" alt="">
 					</div></a>
-					<div class="Thongtin">	Tên Sản Phẩm: <?= $productname_best; ?> <br> <br>
-											Nhà sản Xuất: <?= $manufacturer_best; ?>  <br> <br>
-											Giá Sản Phẩm: <?=$unitprice_best; ?>vnđ <br> <br>
-											Số lượng sản phẩm:<?= $stocksold; ?>
+					<div class="Thongtin">	Tên Sản Phẩm: <?= $productname; ?> <br> <br>
+											Nhà sản Xuất: <?= $manufacturer; ?>  <br> <br>
+											Giá Sản Phẩm: <?=$unitprice; ?>vnđ <br> <br>
+											Số lượng sản phẩm:<?= $stock; ?>
 					</div>
 				</div>
 				<?php
