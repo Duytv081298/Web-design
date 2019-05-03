@@ -16,37 +16,6 @@
 </head>
 <body>
 
-			<?php 
-				require_once('./Cunshopconnector.php');
-				if(isset($_POST['Custid']))
-				{
-					//Lấy dữ liệu gửi lên
-					$Custid = $_POST['Custid'];
-					// insert dữ liệu
-					$Fullname = $_POST['Fullname'];	
-					$Address = $_POST['Address'];
-					$Postalcode = $_POST['Postalcode'];
-					$City = $_POST['City'];
-					$Country = $_POST['Country'];
-					$Phone = $_POST['Phone'];
-					$Fax = $_POST['Fax'];
-					$Tendangnhap = $_POST['Tendangnhap'];
-					$Password = $_POST['Password'];
-					$sql = "INSERT INTO customers(Custid, Fullname,  Address, Postalcode, City, Country, Phone, Fax, Tendangnhap, Password)  VALUES (". (int)$Custid .",'". $Fullname ."',". $Address .", '". $Postalcode."',   ". $City .", ". $Country .",    ". $Phone .",   ". $Fax .", ". $Tendangnhap .",". (int)$Password .")";
-					$sql1 ="SELECT * FROM customers WHERE Custid =".$_POST['Custid'];
-					$conn = new Cunshopconnector();
-					$row = $conn -> runQuery($sql1);
-					if (count($row)>0) {
-						$mess = "Error, ID existed";
-						echo "<script type='text/javascript'>alert('$mess'); window.history.back();</script>";
-						} 
-					else {
-						$conn -> execStatement($sql);
-						$message = "Đã Thêm thông tin khách hàng";
-						echo "<script type='text/javascript'>alert('$message');</script>";
-						}
-				}
-			 ?>
 <?php 
 	if (isset($_GET['Productname'])) {
 		require_once('./Cunshopconnector.php');
