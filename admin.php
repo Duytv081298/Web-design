@@ -154,6 +154,8 @@
 					include 'ConnectorSQL.php';
 					$sql = "SELECT * From customers";
 					$row = pg_query($connection, $sql);
+					if (pg_num_rows($row) > 0) {
+				    while($rowfirst = pg_fetch_assoc($row)) {
 				 	for ($i=0; $i < count($row) ; $i++) { 
 				?>
 					<tr>
@@ -163,7 +165,7 @@
 							</th>
 						<?php } ?>
 					</tr>
-				<?php } ?>
+				<?php } }?>
 			</table>
 		</div>
 
