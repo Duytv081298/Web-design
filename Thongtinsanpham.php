@@ -44,10 +44,10 @@
 		            if (pg_num_rows($total) > 0) {
 		            // output data of each row
 		            while($rowcategory = pg_fetch_assoc($total)) {
-		              $id_categorydb = $rowcategory['categoryid'];
-		              $name_category = $rowcategory['categoryname'];
+		              $categoryid = $rowcategory['categoryid'];
+		              $categoryname = $rowcategory['categoryname'];
 		          ?>
-		         <li><a href="Cunshopdetail.php?categoryid=<?= $categoryid; ?>"><?= $name_category; ?></a></li>
+		         <li><a href="Cunshopdetail.php?categoryid=<?= $categoryid; ?>"><?= $categoryname; ?></a></li>
 		       <?php }} ?>
 			</ul>
 		</div>
@@ -57,7 +57,7 @@
 		<?php
 		include 'db.php';
 		$productid =$_GET['productid'];
-        $queryproduct = "SELECT productid, productname, unitprice, images, stock, manufacturer FROM product WHERE productid = $productid";
+        $queryproduct = "SELECT productid, productname, unitprice, images, stock, manufacturer FROM product WHERE productid = '$productid'";
         $result = pg_query($connection,$queryproduct);
 
             if (pg_num_rows($result) > 0) {
