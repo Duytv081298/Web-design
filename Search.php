@@ -10,7 +10,7 @@
 	<div class="header">
 			<div class="nava">
 			<ul>
-				<li><a href="https://designweb.herokuapp.com/Cunshop.php">Trang chủ</a></li>
+				<li><a href="https://designweb.herokuapp.com/ATN.php">Trang chủ</a></li>
 				<li><a href="">Kiểm tra đơn hàng</a></li>
 				<li><a href="">Đăng nhập</a></li>
 				<li><a href="https://designweb.herokuapp.com/Dangkykh.php">đăng ký</a></li>
@@ -19,7 +19,7 @@
 			</div>
 		 	<div class="banner">
 		 		<div class="Home">
-					<a href="https://designweb.herokuapp.com/Cunshop.php">Cun Shop</a>
+					<a href="https://designweb.herokuapp.com/ATN.php">ATN Shop</a>
 				</div>
 				<div class="Search">
 					<div class="Search1">
@@ -45,7 +45,7 @@
 		              $categoryid = $rowcategory['categoryid'];
 		              $categoryname = $rowcategory['categoryname'];
 		          ?>
-		         <li><a href="Cunshopdetail.php?categoryid=<?= $categoryid; ?>"><?= $categoryname; ?></a></li>
+		         <li><a href="ATNdetail.php?categoryid=<?= $categoryid; ?>"><?= $categoryname; ?></a></li>
 		       <?php }} ?>
 			</ul>
 		</div>
@@ -102,13 +102,13 @@
 			<th  rowspan="2" > CÔNG TY TNHH Duy Thắng <br>
  													Giấy CNĐKDN: 289037490 – Ngày cấp: 06/5/2005, được sửa đổi lần thứ 17 ngày 24/7/2017. <br>
  													Cơ quan cấp: Phòng Đăng ký kinh doanh – Sở kế hoạch và Đầu tư hà Nội. <br>
- 													Địa chỉ đăng ký kinh doanh: Tầng 71, Tòa Nhà Keangnam, E6, Phạm Hùng, Phường Mễ Trì, Quận Nam Từ Liêm, Hà Nội, Việt Nam <br>  <br><br><br>     @Cunshop 2018
+ 													Địa chỉ đăng ký kinh doanh: Tầng 71, Tòa Nhà Keangnam, E6, Phạm Hùng, Phường Mễ Trì, Quận Nam Từ Liêm, Hà Nội, Việt Nam <br>  <br><br><br>     @ATN 2018
  			</th>
 			</tr>
 			<tr >
 				<td ><div align="center" style="padding-top:0%, width= 20px" >
 					
-				</style>Mua hàng trực tuyến (mua hàng online) mang lại sự tiện lợi, lựa chọn đa dạng hơn và các dịch vụ tốt hơn cho người tiêu dùng, thế nhưng người tiêu dùng Việt Nam vẫn chưa tận hưởng được những tiện ích đó. Chính vì vậy Cunshop Việt Nam được triển khai với mong muốn trở thành trung tâm mua sắm trực tuyến số 1 tại Việt Nam, nơi bạn có thể chọn lựa mọi thứ để chăm sóc thú cưng của mình, từ thức ăn cho chó, thức ăn cho mèo, chuồng chó, chuồng cho mèo, và các cả quàn áo cho chúng, các dịch vụ chăm sóc dành riêng cho thú cưng... Chúng tôi có tất cả!</div></td>
+				</style>Mua hàng trực tuyến (mua hàng online) mang lại sự tiện lợi, lựa chọn đa dạng hơn và các dịch vụ tốt hơn cho người tiêu dùng, thế nhưng người tiêu dùng Việt Nam vẫn chưa tận hưởng được những tiện ích đó. Chính vì vậy ATN Việt Nam được triển khai với mong muốn trở thành trung tâm mua sắm trực tuyến số 1 tại Việt Nam, nơi bạn có thể chọn lựa mọi thứ để chăm sóc thứ đồ chơi bạn yêu thích.... Chúng tôi có tất cả!</div></td>
 				
 				
 			</tr>

@@ -1,5 +1,5 @@
 <?php
-class Cunshopconnector{
+class ATNconnector{
 	public $host='localhost';
 	public $dbname='cunshop';
 	public $un= 'root';

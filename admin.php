@@ -18,8 +18,8 @@
 
 <?php 
 	if (isset($_GET['Productname'])) {
-		require_once('./Cunshopconnector.php');
-		$conn = new Cunshopconnector();
+		require_once('./ATNconnector.php');
+		$conn = new ATNconnector();
 		$sql = "UPDATE `product` SET `Productname`='".$_GET['Productname']."',`Manufacturer`='".$_GET['Manufacturer']."',`Unitprice`='".(int)$_GET['Unitprice']."',`Images`='".$_GET['Images']."',`Stock`='".(int)$_GET['Stock']."',`Categoryid`='".(int)$_GET['Categoryid']."' WHERE Productid = ".$_GET['Productid'];
 		$conn -> execStatement($sql);
 	}
@@ -29,8 +29,8 @@
 		
 		if(isset($_GET['del']))
 	   {
-	   	require_once('./Cunshopconnector.php');
-	   	$conn = new Cunshopconnector();
+	   	require_once('./ATNconnector.php');
+	   	$conn = new ATNconnector();
 	   	$id = $_GET['del'];
 	    $sql ="DELETE FROM product WHERE Productid ='". (int)$id ."'";
 	    $conn->execStatement($sql);
@@ -39,7 +39,7 @@
 	   }
 	 ?>
 	 <?php 
-		require_once('./Cunshopconnector.php');
+		require_once('./ATNconnector.php');
 		if(isset($_POST['Productid']))
 		{
 		$ID = $_POST['Productid'];
@@ -51,7 +51,7 @@
 		$Categoryid = $_POST['Categoryid'];
 		$sql = "INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid) VALUES (". $ID .",'". $Productname ."','". $Manufacturer ."',". $Unitprice .", '". $Images."',   ". $Stock .", ". $Categoryid ." )";
 		$sql1 ="SELECT * FROM product WHERE Productid =".$_POST['Productid'];
-		$conn = new Cunshopconnector();
+		$conn = new ATNconnector();
 		$row = $conn -> runQuery($sql1);
 			if (count($row)>0) {
 			$mess = "Error, ID existed";
@@ -69,13 +69,13 @@
 	<div class="header">
 		<div class="nava">
 			<ul>
-				<li><a href="https://designweb.herokuapp.com/Cunshop.php">Trở về giao diện khách hàng</a></li>
+				<li><a href="https://designweb.herokuapp.com/ATN.php">Trở về giao diện khách hàng</a></li>
 			</ul>
 			</div>
 		<div class="banner">
 		 		<div class="Home">
 		 			<p>Giao diện dành riêng cho admin</p>
-					<a href="https://designweb.herokuapp.com/Cunshop.php">Cun Shop</a>
+					<a href="https://designweb.herokuapp.com/ATN.php">ATN Shop</a>
 				</div>
 				<div class="Search">
 					<div class="Search1">
@@ -105,8 +105,8 @@
 					<th>Delete</th>
 				</tr>
 				<?php 
-					require_once('./Cunshopconnector.php');
-					$conn = new Cunshopconnector();
+					require_once('./ATNconnector.php');
+					$conn = new ATNconnector();
 					$sql = "Select * From product";
 					$rows = $conn->runQueryadmin($sql);
 				 	for ($i=0; $i < count($rows) ; $i++) { 
@@ -180,8 +180,8 @@
 					<th>Delete</th>
 				</tr>
 				<?php 
-					require_once('./Cunshopconnector.php');
-					$conn = new Cunshopconnector();
+					require_once('./ATNconnector.php');
+					$conn = new ATNconnector();
 					$sql = "Select * From category";
 					$rows = $conn->runQueryadmin($sql);
 				 	for ($i=0; $i < count($rows) ; $i++) { 
@@ -215,12 +215,12 @@
 			<th  rowspan="2" style=" color:#FFFFFF" > CÔNG TY TNHH Duy Thắng <br>
  													Giấy CNĐKDN: 289037490 – Ngày cấp: 06/5/2005, được sửa đổi lần thứ 17 ngày 24/7/2017. <br>
  													Cơ quan cấp: Phòng Đăng ký kinh doanh – Sở kế hoạch và Đầu tư hà Nội. <br>
- 													Địa chỉ đăng ký kinh doanh: Tầng 71, Tòa Nhà Keangnam, E6, Phạm Hùng, Phường Mễ Trì, Quận Nam Từ Liêm, Hà Nội, Việt Nam <br>  <br><br><br>     @Cunshop 2018
+ 													Địa chỉ đăng ký kinh doanh: Tầng 71, Tòa Nhà Keangnam, E6, Phạm Hùng, Phường Mễ Trì, Quận Nam Từ Liêm, Hà Nội, Việt Nam <br>  <br><br><br>     @ATN 2018
  			</th>
 			</tr>
 			<tr >
 				<td ><div align="center" style="padding-top:0%, width= 20px; color:#FFFFFF" >	
-				</style>Mua hàng trực tuyến (mua hàng online) mang lại sự tiện lợi, lựa chọn đa dạng hơn và các dịch vụ tốt hơn cho người tiêu dùng, thế nhưng người tiêu dùng Việt Nam vẫn chưa tận hưởng được những tiện ích đó. Chính vì vậy Cunshop Việt Nam được triển khai với mong muốn trở thành trung tâm mua sắm trực tuyến số 1 tại Việt Nam, nơi bạn có thể chọn lựa mọi thứ để chăm sóc thú cưng của mình, từ thức ăn cho chó, thức ăn cho mèo, chuồng chó, chuồng cho mèo, và các cả quàn áo cho chúng, các dịch vụ chăm sóc dành riêng cho thú cưng... Chúng tôi có tất cả!</div></td>	
+				</style>Mua hàng trực tuyến (mua hàng online) mang lại sự tiện lợi, lựa chọn đa dạng hơn và các dịch vụ tốt hơn cho người tiêu dùng, thế nhưng người tiêu dùng Việt Nam vẫn chưa tận hưởng được những tiện ích đó. Chính vì vậy ATN Việt Nam được triển khai với mong muốn trở thành trung tâm mua sắm trực tuyến số 1 tại Việt Nam, nơi bạn có thể chọn lựa mọi thứ để chăm sóc thứ đồ chơi bạn yêu thích.... Chúng tôi có tất cả!</div></td>	
 			</tr>
 		</table>
 	</div>
