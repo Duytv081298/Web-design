@@ -59,7 +59,7 @@
 
 		     include 'ConnectorSQL.php';
 
-		    $queryfirst = "SELECT * from product order by product desc fetch first 10 rows only";
+		    $queryfirst = "SELECT * from product order by product desc fetch first 9 rows only";
 		    $resultfirst = pg_query($connection,$queryfirst);
 		    if (pg_num_rows($resultfirst) > 0) {
 		      // output data of each row
