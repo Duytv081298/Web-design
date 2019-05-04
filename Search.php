@@ -85,7 +85,7 @@
 					</div></a>
 					<div class="Thongtin">	Tên Sản Phẩm: <?= $productname; ?> <br> <br>
 											Nhà sản Xuất: <?= $manufacturer; ?>  <br> <br>
-											Giá Sản Phẩm: <?=$unitprice; ?>vnđ <br> <br>
+											Giá Sản Phẩm: <?=$unitprice; ?> vnđ <br> <br>
 											Số lượng sản phẩm:<?= $stock; ?>
 					</div>
 				</div>

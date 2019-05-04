@@ -73,8 +73,8 @@
 					<div class="chitiet">	<br>Tên Sản Phẩm: <?= $productname; ?> <br> <br>
 											Nhà sản Xuất: <?= $manufacturer; ?> <br> <br>
 											<hr> <br>
-											Giá Sản Phẩm: <?= $unitprice; ?>vnđ <br> <br>
-											Số lượng sản phẩm:<?= $stock; ?> <br> <br>
+											Giá Sản Phẩm: <?= $unitprice; ?> vnđ <br> <br>
+											Số lượng sản phẩm: <?= $stock; ?> <br> <br>
 											Số lượng sản phẩm bạn muốn mua: <input type="number" style="width: 100px;"> <br> <br> <br>
 											<a href=""><input type="button" value="Mua Ngay" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:40%; height: 30px; margin: 20px" ></a>
 											<a href=""><input type="button" value="Thêm vào giỏ hàng" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:40%; height: 30px; margin: 15px" ></a>
