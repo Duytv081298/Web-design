@@ -29,16 +29,13 @@
 						</form>
 					</div>
 				</div>
-				</div>
 		 	</div>
 	</div>
-
 	<div class="main">
 		<div class="navb">
 			<ul>
 				<?php
-
-		          include 'db.php';
+		          include 'ConnectorSQL.php';
 		            $querycategory = "SELECT categoryid, categoryname FROM category";
 		            $total = pg_query($connection,$querycategory);
 		            if (pg_num_rows($total) > 0) {
@@ -55,7 +52,7 @@
 		<div class="sanphamchitiet">
 
 		<?php
-		include 'db.php';
+		include 'ConnectorSQL.php';
 		$productid =$_GET['productid'];
         $queryproduct = "SELECT productid, productname, unitprice, images, stock, manufacturer FROM product WHERE productid = '$productid'";
         $result = pg_query($connection,$queryproduct);
