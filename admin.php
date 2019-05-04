@@ -151,16 +151,15 @@
 					<th>Password</th>
 				</tr>
 				<?php 
-					require_once('./Cunshopconnector.php');
-					$conn = new Cunshopconnector();
-					$sql = "Select * From customers";
-					$rows = $conn->runQueryadmin($sql);
-				 	for ($i=0; $i < count($rows) ; $i++) { 
+					include 'ConnectorSQL.php';
+					$sql = "SELECT * From customers";
+					$result = pg_query($connection,$queryproduct);
+				 	for ($i=0; $i < count($result) ; $i++) { 
 				?>
 					<tr>
-						<?php for ($j=0; $j<count($rows[$i]); $j++) { ?>
+						<?php for ($j=0; $j<count($result[$i]); $j++) { ?>
 							<th>
-								<?php echo $rows[$i][$j]?>
+								<?php echo $result[$i][$j]?>
 							</th>
 						<?php } ?>
 					</tr>
