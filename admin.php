@@ -153,13 +153,13 @@
 				<?php 
 					include 'ConnectorSQL.php';
 					$sql = "SELECT * From customers";
-					$result = pg_query($connection,$queryproduct);
-				 	for ($i=0; $i < count($result) ; $i++) { 
+					$row = pg_query($connection, $sql);
+				 	for ($i=0; $i < count($row) ; $i++) { 
 				?>
 					<tr>
-						<?php for ($j=0; $j<count($result[$i]); $j++) { ?>
+						<?php for ($j=0; $j<count($row[$i]); $j++) { ?>
 							<th>
-								<?php echo $result[$i][$j]?>
+								<?php echo $row[$i][$j]?>
 							</th>
 						<?php } ?>
 					</tr>
