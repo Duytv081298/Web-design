@@ -19,7 +19,7 @@
 			</div>
 		 	<div class="banner">
 		 		<div class="Home">
-					<a href="https://designweb.herokuapp.com/Cunshop.php">Cun Shop</a>
+					<a href="https://designweb.herokuapp.com/Cunshop.php">ATN Shop</a>
 				</div>
 				<div class="Search">
 					<div class="Search1">
